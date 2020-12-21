@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "F:/Program Files (x86)/Arduino/tools/**",
+                "F:/Program Files (x86)/Arduino/hardware/arduino/avr/**",
+                "F:/Program Files (x86)/Arduino/hardware/tools/**",
+                "F:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\**",
+                "F:\\Program Files (x86)\\Arduino\\tools\\**",
+                "F:\\Program Files (x86)\\Arduino\\hardware\\tools\\**",
+                "F:\\Program Files (x86)\\Arduino\\libraries\\**",
+                "F:\\mark_\\OneDrive\\Documents\\Arduino\\libraries\\**"
+            ],
+            "forcedInclude": [
+                "F:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Arduino.h",
+                "F:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"
+            ],
+            "defines": [
+                "_DEBUG",
+                "_UNICODE",
+                "__UNICODE",
+                "__cplusplus",
+                "USBCON"
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "F:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avr-gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
