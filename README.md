@@ -1,6 +1,6 @@
 # EncoderQualityCheck
-This project was created to help identify unexpected results coming from a rotary encoder
-Whilst the code can identify an encoder with a instrinsic fault it has primarily been used to identify when external forces were causing the encoder to misreport
+This project was created to help identify unexpected results coming from a rotary encoder.
+Whilst the code can identify an encoder with a instrinsic fault it has primarily been used to identify when external forces were causing the encoder to misreport.
 Specifically external EMI from a VFD were travelling back up through the mains supply and causing the encoder to generate spurious siganls
 
 This is written to handle an encoder that generates 3 distinct signals; A and B signals that are generated as the encoder is turned and a Z (index) signal that 
@@ -29,3 +29,5 @@ The program will terminate if the rev rate becomes unstable (as this makes any c
 the program terminates. This output is done at the end to minimise any other work being done that might impact responding to encoder signals in the most timely fashion.
 
 NB Memory is a scarce resource on an Arduino hence the log is limited - currently 475 entries.
+
+This code is free to use / copy. No warranty implied and used at your own risk.
