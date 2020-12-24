@@ -49,7 +49,7 @@ const static char  sUnknownMode[]                       = "Unknown mode";
 #define ACCEPTABLE_ZMARGIN_PERCENT 5                            // sets the variation allowed in interrupt timings
 #define ACCEPTABLE_ABMARGIN_PERCENT 10                          // sets the variation allowed in interrupt timings
 #define SETTLE_AVG_MARGIN         5UL                           // percentage of average all settle readings must be within
-#define VER                       14
+#define VER                       15
 
 enum     LOG_LEVEL { MINIMAL, MEDIUM, ALL };                    // Valid values for a LOG_LEVEL variable
 enum  LOG_LEVEL eLogLevel = MEDIUM;                             // Configured logging Level wanted
@@ -289,16 +289,26 @@ void setup ()
 
 
   // Z falling signal from encoder will invoke ZChannelISR(). 
+  ulTimeofRevInterrupt [ 0 ] = 0UL;
   attachInterrupt (digitalPinToInterrupt (ZCHANNEL_PIN), ZChannelISR, FALLING);
 
+  Serial.println ( F ( "Waiting for stable rev rate" )  );
+
   // Wait for stable revs to occur
+  bool bDoOnce = false;
   do
   {
-    delay ( 100 );    
+    delay ( 100 );
+    if ( bDoOnce == false && ulTimeofRevInterrupt [ 0 ] != 0UL )
+    {
+      bDoOnce = true;
+      Serial.println (  F ( "Started to receive Z signals" ) );
+    }   
   }
   while ( bRevRateDetermined == false );
   // Z has settled so now start monitoring A and B channels
-  
+  Serial.println ( F ( "Started monitoring for events" ) );
+
   // A falling signal from encoder will invoke AChannelISR(). 
   attachInterrupt (digitalPinToInterrupt (ACHANNEL_PIN), AChannelISR, FALLING);
 
