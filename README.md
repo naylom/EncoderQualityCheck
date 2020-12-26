@@ -31,3 +31,5 @@ the program terminates. This output is done at the end to minimise any other wor
 NB Memory is a scarce resource on an Arduino hence the log is limited - currently 475 entries.
 
 This code is free to use / copy. No warranty implied and used at your own risk.
+
+NB You only need the EncoderQualityCheck.ino file - others are in development and may not compile.
